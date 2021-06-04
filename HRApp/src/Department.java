@@ -143,7 +143,7 @@ public class Department //Classe de acesso público Departamento
 
     protected void printTotalSalary (Department[] department)   //Imprime salário total do departamento
     {
-        System.out.println("The total salary of " + this.getDepartmentName() + " is US$ " + 
+        System.out.println("The total salary of " + this.getDepartmentName() + " department is US$ " + 
         this.getTotalSalary(department) + ".\n"); //Imprime o salário total do departamento informado.
     }
 
