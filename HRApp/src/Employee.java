@@ -66,11 +66,9 @@ public class Employee implements Comparable<Employee>   //Classe pública funcio
 
     public int compareTo(Employee other)    //Método que compara um objeto desta classe com outro desta classe.
     {
-        // return this.getName().compareTo(other.getName());    //Retorna a classificação por ordem alfabetica de
-                                                                //nome dos funcionários comparados.
-        return this.getId() > other.getId() ? 1 : this.getId() < other.getId() ? -1 : 0;    //Retorna a classificação
-                                                                                            //por ordem ascendente 
-                                                                                            //numérica de id dos
-                                                                                            //objetos comparados.
+      //return this.getName().compareTo(other.getName());   //Retorna a classificação por ordem alfabetica de nome dos
+                                                            //funcionários comparados.
+        return this.getId() > other.getId() ? 1 : this.getId() < other.getId() ? -1 : 0;    
+        //Retorna a classificação por ordem ascendente numérica de id dos objetos comparados.
     }
 }

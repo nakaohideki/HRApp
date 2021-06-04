@@ -81,7 +81,7 @@ public class Department //Classe de acesso público Departamento
             "first Id's employees assigned for this department will be accept.");   //Imprime mensagem de erro.
         }
         department = new Department[counter];   //Cria a matriz departamento com tamanho definido pelo contador.
-        System.out.println("Employees of " + this.getDepartmentName() + " department: \n\n|Id number|    Salary    |" +
+        System.out.println("Employees of " + this.getDepartmentName() + " department:\n\n|Id number|    Salary    |" +
         "Department| Name |" );    //Imprime o cabeçalho da tabela de dados dos funcionários.
         counter = 0;    //Zera o contador para nova contagem de funcionários.
         for (Employee item : company)   //Laço que executa rotina para cada funcionário da matriz company informada.
@@ -120,24 +120,57 @@ public class Department //Classe de acesso público Departamento
         switch (department.length)  //executa loop em função da quantidade de funcionários do departamento.
         {
             case 0: //rotina executada quando não existir funcionário no departamento solicitado.
-            System.out.println("\nThe " + this.getDepartmentName() + "department has no employees.\n");  //imprime mensagem
-                                                                                                    //de aviso.
+            System.out.println("\nThe " + this.getDepartmentName() + "department has no employees.\n"); //imprime 
+                                                                                                        //aviso.
             case 1: //rotina executada quando existir 1 funcionário no departamento solicitado.
-            System.out.println("\nThe " + this.getDepartmentName() + " department has 1 employee.\n");   //imprime mensagem
-                                                                                                    //de aviso.
+            System.out.println("\nThe " + this.getDepartmentName() + " department has 1 employee.\n");  //imprime
+                                                                                                        //aviso.
             default: //rotina para quando existirem mais de 1 funcionário no departamento solicitado.
             System.out.println("\nThe " + this.getDepartmentName() + " department has " + department.length
-             + " employees.\n");   //imprime mensagem de aviso.
+             + " employees.\n");   //imprime aviso.
         }
     }
 
-    protected void getTotalSalary(Department[] department)
+    protected double getTotalSalary(Department[] department)    //Calcula o salário total do departamento informado.
     {
-        double totalSalary = 0.0;
-        for (Department item : department)
+        double totalSalary = 0.0;   //Variável onde serão armazenados os salários somados.
+        for (Department item : department)  //Acessa cada indice da matriz departmento informada.
         {
-            totalSalary = totalSalary + item.getEmployee().getSalary();
+            totalSalary = totalSalary + item.getEmployee().getSalary(); //Soma o salário para cada funcionário.
         }
-        System.out.println("The total salary of " + this.getDepartmentName() + " is US$ " + totalSalary + ".");
+        return totalSalary; //Retorna o valor total do salário do departamento informado.
+    }
+
+    protected void printTotalSalary (Department[] department)   //Imprime salário total do departamento
+    {
+        System.out.println("The total salary of " + this.getDepartmentName() + " is US$ " + 
+        this.getTotalSalary(department) + "."); //Imprime o salário total do departamento informado.
+    }
+
+    protected double getAverageSalary(Department[] department)  //Cálcula o salário médio do departamento informado.
+    {
+        try //Rotina para tratar possiveis eventos durante a execução do programa.
+        {   
+            return Math.floor(getTotalSalary(department) / department.length * 100) / 100;  
+            //Retorna o cálculo do salário médio arredondado em 2 casas decimais.
+        }
+        catch (ArithmeticException e)   //Tratativa para divisão por zero no cálculo do salário médio.
+        {
+            return 0;   //retorna o valor zero.
+        }
+    }
+        
+    protected void printAverageSalary (Department[] department) //Imprime o salário médio do departamento informado.
+    {
+        switch(department.length)   //laço para tratar eventos específicos.
+        {
+            case 0: //rotina para quando não existir funcionários no departamento informado.
+            System.out.println("The average salary for the " + this.getDepartmentName() + " could no be calculated " +
+            "because the total employee working at this department is 0 employee.");    //Retorna aviso de erro.
+
+            default:    //rotina para cálculo normal.
+            System.out.println("The average salary of " + this.getDepartmentName() + " department is US$ " + 
+            this.getAverageSalary(department) + ".");   //Retorna o valor do salário médio do departamento informado.
+        }
     }
 }
