@@ -173,11 +173,10 @@ public class Department //Classe de acesso público Departamento
             this.getAverageSalary(department) + ".\n");   //Retorna o valor do salário médio do departamento informado.
         }
     }
-    @Override
-
-    public String toString() 
+    @Override   //Notação que sobreescreve os método abaixo para os objetos desta classe.
+    public String toString()    //Método que retorna uma representação convertida em String dos objetos desta classe.
     {
-        return getDepartmentName() + " department.\n" + 
-        "The maximum employees per derpartment capacity is 10.";
+        return getDepartmentName() + " department.";    //Retorna a representação String de formatação dos dados do 
+                                                            //departamento.
     }
 }
