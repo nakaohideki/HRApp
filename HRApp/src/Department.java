@@ -144,7 +144,7 @@ public class Department //Classe de acesso público Departamento
     protected void printTotalSalary (Department[] department)   //Imprime salário total do departamento
     {
         System.out.println("The total salary of " + this.getDepartmentName() + " is US$ " + 
-        this.getTotalSalary(department) + "."); //Imprime o salário total do departamento informado.
+        this.getTotalSalary(department) + ".\n"); //Imprime o salário total do departamento informado.
     }
 
     protected double getAverageSalary(Department[] department)  //Cálcula o salário médio do departamento informado.
@@ -166,11 +166,18 @@ public class Department //Classe de acesso público Departamento
         {
             case 0: //rotina para quando não existir funcionários no departamento informado.
             System.out.println("The average salary for the " + this.getDepartmentName() + " could no be calculated " +
-            "because the total employee working at this department is 0 employee.");    //Retorna aviso de erro.
+            "because the total employee working at this department is 0 employee.\n");    //Retorna aviso de erro.
 
             default:    //rotina para cálculo normal.
             System.out.println("The average salary of " + this.getDepartmentName() + " department is US$ " + 
-            this.getAverageSalary(department) + ".");   //Retorna o valor do salário médio do departamento informado.
+            this.getAverageSalary(department) + ".\n");   //Retorna o valor do salário médio do departamento informado.
         }
+    }
+    @Override
+
+    public String toString() 
+    {
+        return getDepartmentName() + " department.\n" + 
+        "The maximum employees per derpartment capacity is 10.";
     }
 }

@@ -4,11 +4,13 @@ public class HRApp  //Classe pública principal HRApp
 {
     public static void main(String[] args)  //Método principal estático da classe HRApp.
     {
-        Department departmentobject = new Department("IT");   //Instancia novo objeto do tipo department na variável
+        System.out.println("Aplication HR App running.");   //Imprime aviso indicando que o aplicativo está ativo.
+        Department departmentobject = new Department("HR");   //Instancia novo objeto do tipo department na variável
                                                             //departmentname e atribui o parâmetro informado ao nome
                                                             //do departamento criado.
         Department[] department = new Department[10];   //Cria matriz do tipo department de comprimento 10 chamado 
                                                         //department.
+        System.out.println(departmentobject);
         Employee[] company =    //Cria matriz do tipo Employee chamada company e atribui a ela todos os objetos 
                                 //criados com os dados de todos os funcionários da companhia.
         {
