@@ -177,6 +177,6 @@ public class Department //Classe de acesso público Departamento
     public String toString()    //Método que retorna uma representação convertida em String dos objetos desta classe.
     {
         return getDepartmentName() + " department.";    //Retorna a representação String de formatação dos dados do 
-                                                            //departamento.
+                                                        //departamento.
     }
 }
