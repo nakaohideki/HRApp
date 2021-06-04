@@ -130,4 +130,14 @@ public class Department //Classe de acesso público Departamento
              + " employees.\n");   //imprime mensagem de aviso.
         }
     }
+
+    protected void getTotalSalary(Department[] department)
+    {
+        double totalSalary = 0.0;
+        for (Department item : department)
+        {
+            totalSalary = totalSalary + item.getEmployee().getSalary();
+        }
+        System.out.println("The total salary of " + this.getDepartmentName() + " is US$ " + totalSalary + ".");
+    }
 }

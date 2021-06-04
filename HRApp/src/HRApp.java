@@ -36,5 +36,6 @@ public class HRApp  //Classe pública principal HRApp
                                                     //adicionado.
         departmentobject.printEmployeeNumber(department);   //Imprime a quantidade de funcionários pertencentes ao 
                                                             //departamento adicionado.
+        departmentobject.getTotalSalary(department);    //Imprime o salário total do departamento informado.
     }
 }
